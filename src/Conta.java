@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -79,7 +80,7 @@ public abstract class Conta implements ITaxas{
 
     public void imprimirExtrato(int tipo) {
 
-        if(tipo == 1){
+        if(tipo == 0){
             System.out.println("======= Extrato Conta " + this.numero + "======");
             for(Operacao atual : this.operacoes) {
                 if (atual != null) {
@@ -88,9 +89,18 @@ public abstract class Conta implements ITaxas{
             }
             System.out.println("====================");
         }else{
-            Collections.sort(this.operacoes);
+            ArrayList<Operacao> ordenada = new ArrayList<Operacao>();
+            for (Operacao opr : this.operacoes) ordenada.add(opr);
+            Collections.sort(ordenada);
+            System.out.println("======= Extrato Contai " + this.numero + "======");
+            for(Operacao atual : ordenada) {
+                if (atual != null) {
+                    System.out.println(atual);
+                }
+            }
+            System.out.println("====================");
         }
-        }
+    }
 
     public void imprimirExtratoTaxas() {
         System.out.println("=== Extrato de Taxas ===");

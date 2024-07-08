@@ -19,6 +19,7 @@ public class Main {
         cc.sacar(10);
         cc.sacar(15);
         cc.imprimirExtrato(0);
+        cc.imprimirExtrato(1);
         cc.imprimirExtratoTaxas();
     }
 }

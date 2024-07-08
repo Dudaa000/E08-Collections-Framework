@@ -1,4 +1,4 @@
-public class OperacaoSaque extends Operacao implements Comparable<OperacaoSaque>{
+public class OperacaoSaque extends Operacao implements ITaxas{
 
     public OperacaoSaque(double valor) {
         super('s', valor);
@@ -9,12 +9,5 @@ public class OperacaoSaque extends Operacao implements Comparable<OperacaoSaque>
         return 0.05;
     }
 
-    @Override
-    public int compareTo(Operacao outro){
-        if(this.tipo == 's'){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
+
 }

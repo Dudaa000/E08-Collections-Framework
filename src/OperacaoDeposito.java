@@ -1,4 +1,4 @@
-public class OperacaoDeposito extends Operacao implements Comparable{
+public class OperacaoDeposito extends Operacao implements ITaxas{
 
     public OperacaoDeposito(double valor) {
         super('d', valor);
@@ -9,11 +9,4 @@ public class OperacaoDeposito extends Operacao implements Comparable{
         return 0f;
     }
 
-    public int compareTo(Operacao outro){
-        if(this.tipo == 's'){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
 }
